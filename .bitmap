@@ -21,6 +21,12 @@
         "mainFile": "index.ts",
         "rootDir": "demo/pages/welcome"
     },
+    "scope/ui/card": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "scope/scope/ui/card"
+    },
     "ui/button": {
         "scope": "",
         "version": "",
@@ -38,6 +44,12 @@
         "version": "",
         "mainFile": "index.ts",
         "rootDir": "demo/ui/heading"
+    },
+    "ui/profile-card": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "scope/ui/profile-card"
     },
     "ui/text": {
         "scope": "",
