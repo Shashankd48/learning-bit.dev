@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import styles from './card.module.scss';
-import { Button } from '@company/scope.ui.button';
+import { Button, ButtonProps } from '@company/scope.ui.button';
 
 export type ProfileCardProps = {
   /**
@@ -11,15 +11,36 @@ export type ProfileCardProps = {
    * Button text
    */
   buttonText?: string;
-};
+  /**
+   * Card Title
+   */
+  cardTitle: string;
+  /**
+   * a node to be rendered in the special component.
+   */
+  actionButtons?: ReactNode;
+} & ButtonProps;
 
-export function ProfileCard({ children, buttonText }: ProfileCardProps) {
+export function ProfileCard({
+  children,
+  buttonText,
+  cardTitle,
+  actionButtons,
+}: ProfileCardProps) {
   return (
     <div className={styles.card}>
-      {children}
-      <Button type="primary" onClick={() => alert('hello there')}>
-        {buttonText}
-      </Button>
+      <div className={styles.cardHeader}>
+        <h1 className={styles.cardTitle}>{cardTitle}</h1>
+        <Button type="primary" onClick={() => alert('hello there')}>
+          {buttonText}
+        </Button>
+      </div>
+
+      <div className={styles.cardContent}>{children}</div>
+
+      {actionButtons && (
+        <div className={styles.cardAction}>{actionButtons}</div>
+      )}
     </div>
   );
 }
